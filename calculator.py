@@ -1,8 +1,4 @@
-from shapes.circle import Circle
-from shapes.hexagon import Hexagon
-from shapes.rectangle import Rectangle
-from shapes.square import Square
-from shapes.triangle import Triangle
+import utilities as ut
 
 SHAPES_OPTIONS  = (1,2,3,4,5,0)
 CALC_OPTION = (1,2,0)
@@ -20,14 +16,13 @@ def display_menu():
     "0.Exit\n")
 
 def display_calc_option():
-    print("Enter your choice:\n" +
-          "1.Get shape area\n" +
-          "2.Get shape perimeter\n" +
-          "0. Exit\n")
+    print("\n1.Get shape area\n" +
+          "2.Get shape perimeter\n")
 
 def is_valid_choice(choice, options):
     try:
-        res = float(choice)
+        res = int(choice)
+        print("Invalid choice. Please try again.")if res not in options else None
         return res in options
     except Exception as e:
         print("Invalid choice. Please try again.")
@@ -37,18 +32,36 @@ def get_choice(options):
     choice = input("Enter your choice:\n")
     while not is_valid_choice(choice, options):
         choice = input("Enter your choice:\n")
-    return float(choice)
+    return int(choice)
 
-def creat_circle():
-    radius = input("Enter the radius:")
-    while not is_valid_choice(radius, 1):
-        radius = input("Enter the radius:")
-    return Circle(float(radius))
+def create_shape(choice):
+    shape_map = {
+    1: ut.create_rectangle, 2: ut.create_square,
+    3: ut.create_triangle, 4: ut.create_circle,
+    5: ut.create_hexagon }
+    return shape_map[choice]()
 
-def creat_shape(choice):
-    pass
+def get_calc(shape):
+    display_calc_option()
+    calc = get_choice((1, 2))
+    if calc == 1:
+        return shape.area()
+    elif calc == 2:
+        return shape.perimeter()
+    return 0
 
-def display_calculate(choice: int):
-    pass
+def calculate():
+    choice = -1
+    while choice != 0:
+        display_menu()
+        choice = get_choice((1, 2, 3, 4, 5, 0))
+        if choice == 0:
+            break
+        shape = create_shape(choice)
+        print(get_calc(shape))
+
+
+
+
 
 
