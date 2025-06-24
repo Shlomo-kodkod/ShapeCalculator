@@ -1,4 +1,4 @@
-from shape import Shape
+from .shape import Shape
 import math
 
 class Circle(Shape):
