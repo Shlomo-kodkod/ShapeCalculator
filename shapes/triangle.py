@@ -20,7 +20,6 @@ class Triangle(Shape):
     def __repr__(self):
         return f"Triangle({self.__side1}, {self.__side2}, {self.__side3})"
 
-a = Triangle(5,4,3)
-print(a.area())
+
 
   
