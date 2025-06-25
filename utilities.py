@@ -1,4 +1,3 @@
-from shapes.shape import Shape
 from shapes.circle import Circle
 from shapes.hexagon import Hexagon
 from shapes.rectangle import Rectangle

@@ -1,21 +1,25 @@
 from shape import Shape
 
 class Rectangle(Shape):
-    def __init__(self, width, height):
-        self.__width = width
-        self.__height = height
+    def __init__(self, side, height):
+        self.name = "Rectangle"
+        self._side = side
+        self._height = height
     
     def area(self):
-        return self.__width * self.__height
+        return self._side * self._height
     
     def perimeter(self):
-        return (self.__width * 2) + (self.__height * 2)
+        return (self._side * 2) + (self._height * 2)
     
+    def get_size_info(self):
+        return f"side {self._side} and height {self._height}"
+
     def __str__(self):
-        return f"Rectangle of width {self.__width} and height {self.__height}, Area: {self.area()}, Perimeter: {self.perimeter()}"
+        return f"{self.name} of {self.get_size_info()}, Area: {self.area()}, Perimeter: {self.perimeter()}"
     
     def __repr__(self):
-        return f"Rectangle({self.__width}, {self.__height})"
+        return f"{self.name}({self._side}, {self._height})"
 
     
   

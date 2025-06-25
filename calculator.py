@@ -1,4 +1,5 @@
 import utilities as ut
+import time
 
 class Calculator:
         
@@ -62,13 +63,16 @@ class Calculator:
     def calculate():
         choice = -1
         while choice != 0:
+            print("Loading...")
+            time.sleep(1)
             Calculator.display_menu()
             choice = Calculator.get_choice((1, 2, 3, 4, 5, 0))
             if choice == 0:
                 print("Exit...")
                 break
             shape = Calculator.create_shape(choice)
-            print(Calculator.get_calc(shape))
+            # print(Calculator.get_calc(shape))
+            print(shape)
 
 
 
