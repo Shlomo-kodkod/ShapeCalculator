@@ -1,4 +1,4 @@
-from square import Square
+from shapes.square import Square
 import math
 
 class Hexagon(Square):
@@ -7,8 +7,12 @@ class Hexagon(Square):
         self.name = "Hexagon"
     
     def area(self):
-        return (3 * (math.sqrt(3 * (self._side ** 2)))) / 2
-    
+        try:
+            return (3 * (math.sqrt(3 * (self._side ** 2)))) / 2
+        except Exception as e:
+            print(e)
+            return  0
+
     def perimeter(self):
         return self._side * 6
     
@@ -16,6 +20,6 @@ class Hexagon(Square):
         return f"side {self._side}"
     
     def __repr__(self):
-        return f"{self.name}({self._side})"
+        return f"{self.name}({self._side}).\n"
   
 

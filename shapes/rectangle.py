@@ -1,4 +1,4 @@
-from shape import Shape
+from shapes.shape import Shape
 
 class Rectangle(Shape):
     def __init__(self, side, height):
@@ -16,10 +16,10 @@ class Rectangle(Shape):
         return f"side {self._side} and height {self._height}"
 
     def __str__(self):
-        return f"{self.name} of {self.get_size_info()}, Area: {self.area()}, Perimeter: {self.perimeter()}"
+        return f"{self.name} of {self.get_size_info()}. \nArea: {self.area()}. \nPerimeter: {self.perimeter()}.\n"
     
     def __repr__(self):
-        return f"{self.name}({self._side}, {self._height})"
+        return f"{self.name}({self._side}, {self._height}).\n"
 
     
   
