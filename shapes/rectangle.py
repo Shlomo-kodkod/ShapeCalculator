@@ -3,17 +3,25 @@ from shapes.shape import Shape
 class Rectangle(Shape):
     def __init__(self, side, height):
         self.name = "Rectangle"
-        self._side = side
-        self._height = height
+        self.__side = side
+        self.__height = height
     
+    @property
+    def side(self):
+        return self.__side
+    
+    @property
+    def height(self):
+        return self.__height
+
     def area(self):
-        return self._side * self._height
+        return self.side * self.height
     
     def perimeter(self):
-        return (self._side * 2) + (self._height * 2)
+        return (self.side * 2) + (self.height * 2)
     
     def get_size_info(self):
-        return f"side {self._side} and height {self._height}"
+        return f"side {self.side} and height {self.height}"
 
     def __str__(self):
         return f"{self.name} of {self.get_size_info()}. \nArea: {self.area()}. \nPerimeter: {self.perimeter()}.\n"

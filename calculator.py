@@ -22,7 +22,7 @@ class Calculator:
             res = int(choice)
             print("Invalid choice. Please try again.")if res not in Calculator.SHAPES_OPTIONS else None
             return res in Calculator.SHAPES_OPTIONS
-        except Exception:
+        except ValueError:
             print("Invalid choice. Please try again.")
             return False
 

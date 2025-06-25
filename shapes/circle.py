@@ -5,24 +5,22 @@ class Circle(Shape):
     def __init__(self, radius):
         self.name = "Circle"
         self.__radius = radius
+
+    @property
+    def radius(self):
+        return self.__radius
     
     def area(self):
-        try:
-            return (self.__radius ** 2) * math.pi
-        except Exception as e:
-            print(e)
-            return 0
+        return (self.radius ** 2) * math.pi
+        
     
     def perimeter(self):
-        try:
-            return self.__radius * (math.pi * 2)
-        except Exception as e:
-            print(e)
-            return  0
+        return self.radius * (math.pi * 2)
+        
     
     def __str__(self):
-        return f"{self.name} of radius {self.__radius}. \nArea: {self.area()}. \nPerimeter: {self.perimeter()}.\n"
+        return f"{self.name} of radius {self.radius}. \nArea: {self.area()}. \nPerimeter: {self.perimeter()}.\n"
     
     def __repr__(self):
-        return f"{self.name}({self.__radius})\n"
+        return f"{self.name}({self.radius})\n"
   

@@ -10,12 +10,9 @@ class RightTriangle(Rectangle):
         return super().area() / 2
     
     def perimeter(self):
-        try:
-            hypotenuse = math.sqrt((self._height ** 2) + (self._side ** 2))
-            return hypotenuse + self._side + self._height
-        except ValueError as e:
-            print(e)
-            return 0
+        hypotenuse = math.sqrt((self.height ** 2) + (self.side ** 2))
+        return hypotenuse + self.side + self.height
+        
 
         
 

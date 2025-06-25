@@ -7,19 +7,16 @@ class Hexagon(Square):
         self.name = "Hexagon"
     
     def area(self):
-        try:
-            return (3 * (math.sqrt(3 * (self._side ** 2)))) / 2
-        except Exception as e:
-            print(e)
-            return  0
+        return (3 * math.sqrt(3) * (self.side ** 2)) / 2
+
 
     def perimeter(self):
-        return self._side * 6
+        return self.side * 6
     
     def get_size_info(self):
-        return f"side {self._side}"
+        return f"side {self.side}"
     
     def __repr__(self):
-        return f"{self.name}({self._side}).\n"
+        return f"{self.name}({self.side}).\n"
   
 

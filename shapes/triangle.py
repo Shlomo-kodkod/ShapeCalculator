@@ -4,29 +4,41 @@ import math
 class Triangle(Shape):
     def __init__(self, side_a, side_b, side_c):
         self.name = "Triangle"
-        self._side1 = side_a
-        self._side2 = side_b
-        self._side3 = side_c
+        self.__side1 = side_a
+        self.__side2 = side_b
+        self.__side3 = side_c
     
+    @property
+    def side1(self):
+        return self.__side1
+    
+    @property
+    def side2(self):
+        return self.__side2
+    
+    @property
+    def side3(self):
+        return self.__side3
+
     def area(self):
-        try:
-            p = self.perimeter() / 2
-            return math.sqrt(p * (p - self._side1) * (p - self._side2) * (p - self._side3))
-        except Exception as e:
-            print(e)
+        p = self.perimeter() / 2
+        area_s = p * (p - self.side1) * (p - self.side2) * (p - self.side3)
+        if area_s < 0:
+            print("Invalid triangle dimensions")
             return 0
+        return math.sqrt(area_s)
 
     def perimeter(self):
-        return self._side1 + self._side2 + self._side3
+        return self.side1 + self.side2 + self.side3
 
     def get_size_info(self):
-        return f"side {self._side1} side {self._side2} and {self._side3}"
+        return f"side {self.side1} side {self.side2} and {self.side3}"
 
     def __str__(self):
         return f"{self.name} of {self.get_size_info()}. \nArea: {self.area()}. \nPerimeter: {self.perimeter()}.\n"
     
     def __repr__(self):
-        return f"{self.name}({self._side1}, {self._side2}, {self._side3})\n"
+        return f"{self.name}({self.side1}, {self.side2}, {self.side3})\n"
 
 
 
