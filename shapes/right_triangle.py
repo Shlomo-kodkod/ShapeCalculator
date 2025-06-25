@@ -2,6 +2,7 @@ from shapes.rectangle import Rectangle
 import math
 
 class RightTriangle(Rectangle):
+    
     def __init__(self, cathetus1, cathetus2):
         super().__init__(cathetus1, cathetus2)
         self.name = "RightTriangle"

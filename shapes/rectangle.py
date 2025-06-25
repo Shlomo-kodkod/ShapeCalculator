@@ -1,6 +1,7 @@
 from shapes.shape import Shape
 
 class Rectangle(Shape):
+    
     def __init__(self, side, height):
         self.name = "Rectangle"
         self.__side = side
