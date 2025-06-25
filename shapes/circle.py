@@ -1,19 +1,28 @@
-from .shape import Shape
+from shapes.shape import Shape
 import math
 
 class Circle(Shape):
     def __init__(self, radius):
+        self.name = "Circle"
         self.__radius = radius
     
     def area(self):
-        return (self.__radius ** 2) * math.pi
+        try:
+            return (self.__radius ** 2) * math.pi
+        except Exception as e:
+            print(e)
+            return 0
     
     def perimeter(self):
-        return self.__radius * (math.pi * 2)
+        try:
+            return self.__radius * (math.pi * 2)
+        except Exception as e:
+            print(e)
+            return  0
     
     def __str__(self):
-        return f"Circle of radius {self.__radius} , Area: {self.area()}, Perimeter: {self.perimeter()}"
+        return f"{self.name} of radius {self.__radius}. \nArea: {self.area()}. \nPerimeter: {self.perimeter()}.\n"
     
     def __repr__(self):
-        return f"Circle({self.__radius})"
+        return f"{self.name}({self.__radius})\n"
   

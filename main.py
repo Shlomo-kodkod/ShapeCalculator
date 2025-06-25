@@ -1,4 +1,4 @@
-import calculator
+from calculator import Calculator
 
 if __name__ == "__main__":
-    calculator.Calculator.calculate()
+    Calculator.calculate()

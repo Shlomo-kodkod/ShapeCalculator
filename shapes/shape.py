@@ -9,6 +9,9 @@ class Shape(ABC):
     def perimeter(self):
         pass
 
+    def get_size_info(self):
+        pass
+
     def __str__(self):
         pass
     
