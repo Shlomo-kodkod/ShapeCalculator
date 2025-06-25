@@ -3,18 +3,21 @@ from abc import ABC, abstractmethod
 class Shape(ABC):
 
     @abstractmethod
-    def area(self):
+    def area(self) ->float:
         pass
 
     @abstractmethod
-    def perimeter(self):
+    def perimeter(self) -> float:
         pass
 
-    def get_size_info(self):
+    @abstractmethod
+    def get_size_info(self) -> str:
         pass
 
-    def __str__(self):
+    @abstractmethod
+    def __str__(self) -> str:
         pass
     
-    def __repr__(self):
+    @abstractmethod
+    def __repr__(self) -> str:
         pass

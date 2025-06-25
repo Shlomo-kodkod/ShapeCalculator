@@ -1,3 +1,4 @@
+from shapes.shape import Shape
 import utilities as ut
 import time
 
@@ -21,11 +22,11 @@ class Calculator:
     """
 
     @staticmethod
-    def display_menu():
+    def display_menu() -> None:
         print(Calculator.MENU)
 
     @staticmethod
-    def is_valid_choice(choice):
+    def is_valid_choice(choice: str) -> bool:
         try:
             res = int(choice)
             print("Invalid choice. Please try again.")if res not in Calculator.SHAPES_OPTIONS else None
@@ -35,14 +36,14 @@ class Calculator:
             return False
 
     @staticmethod
-    def get_choice():
+    def get_choice() -> int:
         choice = input("Enter your choice:\n")
         while not Calculator.is_valid_choice(choice):
             choice = input("Enter your choice:\n")
         return int(choice)
 
     @staticmethod
-    def create_shape(choice):
+    def create_shape(choice: int) -> Shape:
         shape_map = {
         1: ut.create_rectangle, 2: ut.create_square,
         3: ut.create_triangle, 4: ut.create_circle,
@@ -50,7 +51,7 @@ class Calculator:
         return shape_map[choice]()
 
     @staticmethod
-    def calculate():
+    def calculate() -> None:
         choice = -1
         while choice != 0:
             print("Loading...")
