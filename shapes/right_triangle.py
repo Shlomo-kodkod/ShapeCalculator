@@ -1,4 +1,4 @@
-from .rectangle import Rectangle
+from shapes.rectangle import Rectangle
 import math
 
 class RightTriangle(Rectangle):
