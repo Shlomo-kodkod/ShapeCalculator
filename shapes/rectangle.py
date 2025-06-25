@@ -27,7 +27,7 @@ class Rectangle(Shape):
         return f"{self.name} of {self.get_size_info()}. \nArea: {self.area()}. \nPerimeter: {self.perimeter()}.\n"
     
     def __repr__(self):
-        return f"{self.name}({self._side}, {self._height}).\n"
+        return f"{self.name}({self.side}, {self.height}).\n"
 
     
   

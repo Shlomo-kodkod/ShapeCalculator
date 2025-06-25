@@ -4,17 +4,25 @@ import time
 class Calculator:
         
     SHAPES_OPTIONS  = (1,2,3,4,5,6,0)
+    MENU = """ 
+       ********** 
+  Shape Calculator Menu   
+       ********** 
+==========================
+ Chose shape to calculate:
+ [1] Rectangle
+ [2] Square
+ [3] Triangle
+ [4] Circle
+ [5] Hexagon
+ [6] Right Triangle
+ [0] Exit
+==========================
+    """
 
     @staticmethod
     def display_menu():
-        print("-" * 30 + "\n" +
-        "Shape Calculator Menu".center(30) + "\n" +
-        "-" * 30 + "\n" +
-        "Chose shape to calculate\n" + 
-        "1.Rectangle\n" + "2.Square\n" +
-        "3.Triangle\n" + "4.Circle\n" +
-        "5.Hexagon\n" + "6.Right Triangle\n"
-        "0.Exit\n")
+        print(Calculator.MENU)
 
     @staticmethod
     def is_valid_choice(choice):
@@ -46,7 +54,7 @@ class Calculator:
         choice = -1
         while choice != 0:
             print("Loading...")
-            time.sleep(1)
+            time.sleep(0.7)
             Calculator.display_menu()
             choice = Calculator.get_choice()
             if choice == 0:
